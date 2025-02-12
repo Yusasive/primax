@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Consumer from "@/public/images/consumer.png";
 
@@ -51,7 +52,7 @@ export default function BusinessCard() {
     if (!isDragging || !scrollRef.current) return;
     e.preventDefault();
     const x = e.pageX - (scrollRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 1.5;
+    const walk = (x - startX) * 1.8; // Slightly increased drag sensitivity
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -60,26 +61,31 @@ export default function BusinessCard() {
   };
 
   return (
-    <section className="px-6 md:px-12 lg:px-24 py-24 mt-20 rounded-lg text-left">
+    <section className="px-6 md:px-12 lg:px-24 py-24 mt-20 text-left">
+      {/* Scrollable container for mobile */}
       <div
         ref={scrollRef}
-        className={`mt-10 overflow-hidden lg:overflow-visible flex gap-6 cursor-grab active:cursor-grabbing`}
+        className="mt-10 flex gap-6 overflow-x-auto lg:overflow-visible cursor-grab active:cursor-grabbing snap-x snap-mandatory scroll-smooth"
         onMouseDown={startDrag}
         onMouseMove={onDrag}
         onMouseUp={stopDrag}
         onMouseLeave={stopDrag}
       >
-        <div className="flex gap-6 flex-nowrap lg:grid lg:grid-cols-3">
+        <div className="flex gap-6 lg:grid lg:grid-cols-3 w-full">
           {cards.map((card) => (
-            <div
+            <motion.div
               key={card.id}
-              className="bg-white hover:text-white hover:bg-[#623eca] p-10 space-y-16 rounded-2xl shadow-md flex flex-col justify-between h-full min-w-[90%] sm:min-w-[48%] lg:min-w-0"
+              className="bg-white hover:text-white hover:bg-[#623eca] p-10 space-y-10 rounded-2xl shadow-md flex flex-col justify-between h-full min-w-[90%] sm:min-w-[48%] lg:min-w-0 transition-all duration-300 hover:scale-105 snap-center"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
             >
-              <div className="space-y-8">
-                <h2 className="text-4xl hover:text-white text-[#1b1b1b] font-bold">
+              <div className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl text-[#1b1b1b] font-bold transition-all duration-300 hover:text-white">
                   {card.title}
                 </h2>
-                <p className="text-gray-500 hover:text-white text-lg font-semibold mt-2">
+                <p className="text-gray-500 text-lg font-semibold transition-all duration-300 hover:text-white">
                   {card.description}
                 </p>
               </div>
@@ -87,10 +93,10 @@ export default function BusinessCard() {
                 <Image
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-auto"
+                  className="w-full h-auto object-contain"
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
