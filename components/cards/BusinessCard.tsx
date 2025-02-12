@@ -23,14 +23,14 @@ const cards = [
     id: 3,
     title: "For Small Businesses",
     description:
-      "Start your small business quickly and easily by accepting local and international payments with just a few taps using Tribapay. Our user-friendly app makes it simple for you to set up and running in no time, allowing you to start collecting payments swiftly.",
+      "Start your small business quickly and easily by accepting local and international payments with just a few taps using Primax. Our user-friendly app makes it simple for you to set up and running in no time, allowing you to start collecting payments swiftly.",
     image: Consumer,
   },
   {
     id: 4,
     title: "For Enterprise Companies",
     description:
-      "You can tailor Tribapay's payment solutions to suit your unique requirements and simplify your financial processes with advanced features and API integrations.",
+      "You can tailor Primax's payment solutions to suit your unique requirements and simplify your financial processes with advanced features and API integrations.",
     image: Consumer,
   },
 ];

@@ -1,8 +1,11 @@
+"use client"; 
+
+import { motion } from "framer-motion";
+import Image from "next/image";
 import Vector from "@/public/images/Vector.png";
 import Vector1 from "@/public/images/Vector1.png";
 import Vector2 from "@/public/images/Vector2.png";
 import Vector3 from "@/public/images/Vector3.png";
-import Image from "next/image";
 
 export default function FeatureCards() {
   const features = [
@@ -41,33 +44,48 @@ export default function FeatureCards() {
   ];
 
   return (
-    <section className="bg-pink-50 py-16 px-6 md:px-32 lg:px-52">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {features.map((feature) => (
-          <div
+    <section className="bg-pink-50 py-16 px-6 md:px-16 lg:px-32">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
+        {features.map((feature, index) => (
+          <motion.div
             key={feature.id}
-            className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-left text-left h-full space-y-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.2,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-left text-left h-full space-y-6 transition-transform transform hover:scale-105"
           >
             <div
               className={`w-14 h-14 flex items-center justify-center rounded-full mb-4 ${feature.bgColor}`}
             >
               <Image
                 src={feature.icon}
-                alt="FeatureIcons"
+                alt="Feature Icon"
                 width={24}
                 height={24}
+                className="w-6 h-6"
               />
             </div>
 
-            <h2 className="font-bold text-[#1b1b1b] text-2xl mt-4">
+            <h2 className="font-bold text-[#1b1b1b] text-xl mt-4">
               {feature.title}
             </h2>
-            <p className="text-gray-400 font-semibold mt-2 text-sm">
+            <p className="text-gray-500 font-medium mt-2 text-sm leading-relaxed">
               {feature.description}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,5 +1,5 @@
 import Business from "@/components/reusable/Business";
-import AiFeat from "@/public/images/AiFeat.png";
+import BusinessImage from "@/public/images/BusinessImage.png";
 
 const featuresData = [
   {
@@ -22,7 +22,7 @@ const featuresData = [
 export default function GlobalAccessibility() {
   return (
     <div>
-      <Business image={AiFeat} features={featuresData} bgColor="#fff5e6" />
+      <Business image={BusinessImage} features={featuresData} />
     </div>
   );
 }

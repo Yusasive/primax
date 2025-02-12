@@ -1,34 +1,46 @@
+"use client"; 
+
 import Image from "next/image";
 import Button from "@/components/button/Button";
-import WorldImage from "@/public/images/World.png";
+import CodeImage from "@/public/images/Code.png";
+import { motion } from "framer-motion";
 
 export default function BusinessPotential() {
   return (
-    <section className="bg-white mt-28 mx-6 md:mx-32 lg:mx-52 p-16 flex flex-col-reverse lg:flex-row items-center justify-between rounded-3xl">
-      <div className="text-center lg:text-left max-w-2xl space-y-12">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#623eca] leading-tight">
-          Connect By Tribapay.
-        </h1>
-        <p className="text-base md:text-lg font-bold text-gray-600 mt-4">
-          Payment processing gateway that allows businesses to seamlessly
-          process and accept online payments locally and across borders through
-          integration of our Developer APIs or No-code tools.
+    <section className="bg-[#12002b] mt-28 px-6 md:px-16 lg:px-32 py-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
+   
+      <motion.div
+        className="text-center lg:text-left max-w-2xl space-y-8"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <p className="text-2xl md:text-3xl font-normal text-white">
+          Unlock your business potential with our powerful APIs and easy-to-use
+          resources.
         </p>
-        <div className="mt-6">
-          <Button variant="primary">Get Started ↗️</Button>
+        <div>
+          <Button variant="secondary">Coming Soon</Button>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="w-full max-w-[350px] lg:max-w-[400px]">
+      <motion.div
+        className="w-full max-w-[500px] lg:max-w-[600px]"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         <Image
-          src={WorldImage}
-          alt="Hero Picture"
-          width={324}
-          height={361}
+          src={CodeImage}
+          alt="Code Illustration"
+          width={566}
+          height={537}
           className="w-full h-auto"
           priority
         />
-      </div>
+      </motion.div>
     </section>
   );
 }

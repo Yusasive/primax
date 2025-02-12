@@ -22,11 +22,7 @@ const featuresData = [
 export default function BusinessAnalyze() {
   return (
     <div>
-      <Business
-        image={AiFeat}
-        features={featuresData}
-        bgColor="#fff5e6"
-      />
+      <Business image={AiFeat} features={featuresData} />
     </div>
   );
 }
