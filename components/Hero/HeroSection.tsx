@@ -7,8 +7,7 @@ import hero1 from "@/public/images/hero1.png";
 
 export default function HeroSection() {
   return (
-    <section className="bg-[#fef5f5] mt-16 px-6 md:px-12 lg:px-24 xl:px-52 flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen">
-      {/* Left Section - Text */}
+    <section className="bg-[#fef5f5] mt-20 px-6 md:px-12 lg:px-24 xl:px-52 flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen">
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -29,7 +28,6 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
-      {/* Right Section - Image */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}

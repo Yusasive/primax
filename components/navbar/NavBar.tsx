@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        <div className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-6 px-52 bg-white bg-opacity-90 backdrop-blur-md backdrop-filter shadow-md">
+        <div className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-6 px-6 sm:px-12 lg:px-24 bg-white bg-opacity-90 backdrop-blur-md backdrop-filter shadow-md">
           <div className="flex items-center text-4xl justify-center sm:justify-start gap-2 font-bold">
             <svg
               width="24"
@@ -93,7 +93,6 @@ const Navbar: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -125,8 +124,6 @@ const Navbar: React.FC = () => {
                         {item.title}
                       </Link>
                     )}
-
-                    {/* Dropdown Menu */}
                     {item.subMenu && dropdownOpen && (
                       <ul className="flex flex-col items-center gap-2 mt-2 bg-white w-full rounded-lg shadow-lg">
                         {item.subMenu.map((subItem) => (

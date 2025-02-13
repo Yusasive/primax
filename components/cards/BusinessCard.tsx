@@ -31,7 +31,7 @@ const cards = [
     id: 4,
     title: "For Enterprise Companies",
     description:
-      "You can tailor Primax&apos;s payment solutions to suit your unique requirements and simplify your financial processes with advanced features and API integrations.",
+      "You can tailor Primax payment solutions to suit your unique requirements and simplify your financial processes with advanced features and API integrations.",
     image: Consumer,
   },
 ];
@@ -52,7 +52,7 @@ export default function BusinessCard() {
     if (!isDragging || !scrollRef.current) return;
     e.preventDefault();
     const x = e.pageX - (scrollRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 1.8; // Slightly increased drag sensitivity
+    const walk = (x - startX) * 1.8; 
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -62,7 +62,7 @@ export default function BusinessCard() {
 
   return (
     <section className="px-6 md:px-12 lg:px-24 py-24 mt-20 text-left">
-      {/* Scrollable container for mobile */}
+
       <div
         ref={scrollRef}
         className="mt-10 flex gap-6 overflow-x-auto lg:overflow-visible cursor-grab active:cursor-grabbing snap-x snap-mandatory scroll-smooth"
