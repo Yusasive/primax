@@ -26,7 +26,7 @@ export default function BusinessAnalyze({
     >
  
       <motion.div
-        className="w-full max-w-[450px] lg:max-w-[550px]"
+        className="w-full max-w-[500px] lg:max-w-[600px]"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -41,7 +41,6 @@ export default function BusinessAnalyze({
           priority
         />
       </motion.div>
-
       <motion.div
         className="text-center lg:text-left max-w-2xl space-y-8"
         initial={{ opacity: 0, x: 50 }}

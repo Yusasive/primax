@@ -5,10 +5,8 @@ import { FaGithub, FaFacebook, FaXTwitter, FaGoogle } from "react-icons/fa6";
 export default function Footer() {
   return (
     <div className="w-full bg-[#12002b] px-8 py-20 md:px-52">
-      {/* Main Footer */}
       <footer className="bg-base-200/60 sm:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 mb-20">
-          {/* Newsletter Subscription */}
           <div>
             <div className="flex items-center text-4xl justify-center sm:justify-start gap-2 font-bold">
               <svg
@@ -43,7 +41,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation Sections */}
           <nav className="text-base-content flex flex-col text-center sm:text-left text-white space-y-4">
             <h6 className="text-lg font-medium mb-4">Products</h6>
             <div>
@@ -112,8 +109,7 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* Bottom Footer */}
-      <footer className="bg-base-200/60 border-t border-base-content/25 px-4 sm:px-10 lg:px-20 py-4">
+      <footer className="bg-base-200/60 border-base-content/25 px-4 sm:px-10 lg:px-20 py-4">
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <div className="flex flex-col">
             {" "}
@@ -122,7 +118,7 @@ export default function Footer() {
               All rights reserved
             </p>
           </div>
-          {/* Social Icons */}
+
           <div className="flex flex-wrap justify-center sm:justify-start gap-4 mt-2 sm:mt-0">
             <Link
               href="#"

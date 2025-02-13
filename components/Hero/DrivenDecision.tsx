@@ -3,19 +3,19 @@ import Cashflow from "@/public/images/Cashflow.png";
 
 const featuresData = [
   {
-    title: "AI-Driven Decisions",
+    title: "Multi Branch Management.",
     description:
-      "Harness the speed and accuracy of our AI tools for faster loan approvals. Get the funds you need precisely when you need them, without the wait.",
+      "Other branches of the institution is being catered for to allow easy tracking of transactions that takes place in them.",
   },
   {
-    title: "Hassle-Free Financing",
+    title: "Inter-branch Transaction  Management.",
     description:
-      "Access working capital effortlessly by converting outstanding invoices into immediate cash. Keep your business operations running smoothly.",
+      "All transaction posted by account officer or cashier in various branches within the institutions are to be approved by the manager.",
   },
   {
-    title: "Boosted Cash Flow",
+    title: "Inter-Bank Transfer Management.",
     description:
-      "Smooth out cash flow fluctuations and maintain financial stability. QuicKredit empowers you to take control of your business finances.",
+      "Ability to track customers account transactions and loan repayment transactions with other banks.",
   },
 ];
 

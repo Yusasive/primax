@@ -43,7 +43,7 @@ export default function World({
         )}
         {buttonText && (
           <div className="mt-6">
-            <Button variant="primary">{buttonText} ↗️</Button>
+            <Button variant="primary">{buttonText} ↗</Button>
           </div>
         )}
       </motion.div>

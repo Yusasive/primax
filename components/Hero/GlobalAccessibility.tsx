@@ -3,19 +3,19 @@ import BusinessImage from "@/public/images/BusinessImage.png";
 
 const featuresData = [
   {
-    title: "Global Accessibility:",
+    title: "Fixed Deposit Account Management.",
     description:
-      "Grow your business and accept payments from users in various African countries across different e-channels by enabling them to pay with Cashpin.",
+      "Account that allows investments of  a specific amount of funds for a particular period of time would be monitored to effectively generate the return on investment.",
   },
   {
-    title: "Customizable Solutions",
+    title: "Loan Application Management.",
     description:
-      "Cashpin for Business offers flexibility in designing payment solutions, so you can create a seamless user experience aligned with your brand.",
+      "Create trackable steps for customers loan lifecycle from loan application, loan disbursement, repayment and closing.",
   },
   {
-    title: "Speed and Efficiency",
+    title: "Loan Repayment Management.",
     description:
-      "Experience the fast and highly reliable payment system with our Cashpin for business infrastructure. Users generate a pin and simply scan it using a QR code at payment terminals to successfully complete transactions.",
+      "Set a satisfying approach that would allow customers to have a convenient repayment method ,thereby easing the burden on the customers.",
   },
 ];
 
