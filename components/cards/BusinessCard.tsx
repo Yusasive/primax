@@ -1,104 +1,199 @@
 "use client";
 
-import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Consumer from "@/public/images/consumer.png";
+import { useRef } from "react";
 
-const cards = [
+const plans = [
   {
     id: 1,
-    title: "For General Consumers",
-    description:
-      "Use our payment app for all your everyday financial needs, such as sending money, receiving payments, paying bills, buying airtime, making cashpin transactions, and managing international transactions with a dollar card.",
-    image: Consumer,
+    name: "STARTER PLAN",
+    price: "₦12,000",
+    billingCycle: "monthly / billed annually",
+    features: [
+      "Limited Customers",
+      "Limited Products",
+      "Limited Transactions",
+      "Unlimited Territories",
+      "Branch: 2",
+      "Users/Staff/Officers: 2",
+      "Customers: Limited",
+      "All Other Features",
+      "Customization",
+      "Dedicated Host",
+      "Data Migration",
+      "Core Banking Mobile App",
+      "Customer iBank App",
+      "Human Resources",
+      "Payroll",
+      "Payment & Transfer API Integration",
+    ],
   },
   {
     id: 2,
-    title: "For Growing Businesses",
-    description:
-      "Effortlessly manage large transaction volumes and streamline your financial processes as your business grows with our scalable payment infrastructure. No need to worry  we have got you covered.",
-    image: Consumer,
+    name: "BASIC PLAN",
+    price: "₦20,000",
+    billingCycle: "monthly / billed annually",
+    features: [
+      "Limited Customers",
+      "Limited Products",
+      "Limited Transactions",
+      "Unlimited Territories",
+      "Branch: 2",
+      "Users/Staff/Officers: 4",
+      "Customers: Limited",
+      "All Other Features",
+      "Customization",
+      "Dedicated Host",
+      "Data Migration",
+      "Core Banking Mobile App",
+      "Customer iBank App",
+      "Human Resources",
+      "Payroll",
+      "Payment & Transfer API Integration",
+    ],
   },
   {
     id: 3,
-    title: "For Small Businesses",
-    description:
-      "Start your small business quickly and easily by accepting local and international payments with just a few taps using Primax. Our user-friendly app makes it simple for you to set up and running in no time, allowing you to start collecting payments swiftly.",
-    image: Consumer,
+    name: "PREMIUM PLAN",
+    price: "₦30,000",
+    billingCycle: "monthly / billed annually",
+    features: [
+      "Limited Customers",
+      "Limited Products",
+      "Unlimited Transactions",
+      "Unlimited Territories",
+      "Branch: 4",
+      "Users/Staff/Officers: 10",
+      "Customers: Limited",
+      "All Other Features",
+      "Customization",
+      "Dedicated Host",
+      "Data Migration",
+      "Core Banking Mobile App",
+      "Customer iBank App",
+      "Human Resources",
+      "Payroll",
+      "Payment & Transfer API Integration",
+    ],
   },
   {
     id: 4,
-    title: "For Enterprise Companies",
-    description:
-      "You can tailor Primax payment solutions to suit your unique requirements and simplify your financial processes with advanced features and API integrations.",
-    image: Consumer,
+    name: "PROFESSIONAL PLAN",
+    price: "₦40,000",
+    billingCycle: "monthly / billed annually",
+    features: [
+      "Unlimited Customers",
+      "Unlimited Products",
+      "Unlimited Transactions",
+      "Unlimited Territories",
+      "Branch: 5",
+      "Users/Staff/Officers: 15",
+      "Customers: Unlimited",
+      "All Other Features",
+      "Customization",
+      "Dedicated Host",
+      "Data Migration",
+      "Core Banking Mobile App",
+      "Customer iBank App",
+      "Human Resources",
+      "Payroll",
+      "Payment & Transfer API Integration",
+    ],
+  },
+  {
+    id: 5,
+    name: "ULTIMATE PLAN",
+    price: "₦50,000",
+    billingCycle: "monthly / billed annually",
+    features: [
+      "Unlimited Customers",
+      "Unlimited Products",
+      "Unlimited Transactions",
+      "Unlimited Territories",
+      "Branch: 10",
+      "Users/Staff/Officers: 25",
+      "Customers: Unlimited",
+      "All Other Features",
+      "Customization",
+      "Dedicated Host",
+      "Data Migration",
+      "Core Banking Mobile App",
+      "Customer iBank App",
+      "Human Resources",
+      "Payroll",
+      "Payment & Transfer API Integration",
+    ],
+  },
+  {
+    id: 6,
+    name: "ENTERPRISE PLAN",
+    price: "₦60,000",
+    billingCycle: "monthly / billed annually",
+    features: [
+      "Unlimited Customers",
+      "Unlimited Products",
+      "Unlimited Transactions",
+      "Unlimited Territories",
+      "Branch: 10",
+      "Users/Staff/Officers: 40",
+      "Customers: Unlimited",
+      "All Other Features",
+      "Customization",
+      "Dedicated Host",
+      "Data Migration",
+      "Core Banking Mobile App",
+      "Customer iBank App",
+      "Human Resources",
+      "Payroll",
+      "Payment & Transfer API Integration",
+    ],
   },
 ];
 
-export default function BusinessCard() {
+export default function PricingPlans() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  const startDrag = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0));
-    setScrollLeft(scrollRef.current?.scrollLeft || 0);
-  };
-
-  const onDrag = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - (scrollRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 1.8; 
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const stopDrag = () => {
-    setIsDragging(false);
-  };
 
   return (
-    <section className="px-6 md:px-12 lg:px-24 py-24 mt-20 text-left">
+    <section className="px-6 md:px-12 lg:px-24 py-24 mt-20 text-center">
+      <h2 className="text-3xl sm:text-4xl font-bold text-[#1b1b1b] mb-10">
+        Choose Your Plan
+      </h2>
 
       <div
         ref={scrollRef}
-        className="mt-10 flex gap-6 overflow-x-auto lg:overflow-visible cursor-grab active:cursor-grabbing snap-x snap-mandatory scroll-smooth"
-        onMouseDown={startDrag}
-        onMouseMove={onDrag}
-        onMouseUp={stopDrag}
-        onMouseLeave={stopDrag}
+        className="flex gap-6 overflow-x-auto lg:grid lg:grid-cols-3 snap-x snap-mandatory scroll-smooth"
       >
-        <div className="flex gap-6 lg:grid lg:grid-cols-3 w-full">
-          {cards.map((card) => (
-            <motion.div
-              key={card.id}
-              className="bg-white hover:text-white hover:bg-[#623eca] p-10 space-y-10 rounded-2xl shadow-md flex flex-col justify-between h-full min-w-[90%] sm:min-w-[48%] lg:min-w-0 transition-all duration-300 hover:scale-105 snap-center"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <div className="space-y-6">
-                <h2 className="text-2xl sm:text-3xl text-[#1b1b1b] font-bold transition-all duration-300 hover:text-white">
-                  {card.title}
-                </h2>
-                <p className="text-gray-500 text-lg font-semibold transition-all duration-300 hover:text-white">
-                  {card.description}
-                </p>
-              </div>
-              <div className="mt-4">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {plans.map((plan) => (
+          <motion.div
+            key={plan.id}
+            className="bg-white text-[#1b1b1b] border border-gray-300 p-8 rounded-xl shadow-md 
+                      min-w-[90%] sm:min-w-[48%] lg:min-w-0 transition-all duration-300 hover:shadow-xl hover:scale-105 snap-center flex flex-col justify-between"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div>
+              <h3 className="text-2xl font-semibold text-[#623eca]">
+                {plan.name}
+              </h3>
+              <p className="text-xl font-bold my-3">{plan.price}</p>
+              <p className="text-sm text-gray-500 mb-6">{plan.billingCycle}</p>
+
+              <ul className="space-y-3 text-left text-gray-600">
+                {plan.features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    ✅ {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <button className="mt-6 bg-[#623eca] text-white py-2 px-5 rounded-lg text-lg font-medium hover:bg-[#4b2a9b] transition-all duration-300">
+              Get Started
+            </button>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
