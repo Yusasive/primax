@@ -17,7 +17,7 @@ const cards = [
     id: 2,
     title: "For Growing Businesses",
     description:
-      "Effortlessly manage large transaction volumes and streamline your financial processes as your business grows with our scalable payment infrastructure. No need to worry – we've got you covered.",
+      "Effortlessly manage large transaction volumes and streamline your financial processes as your business grows with our scalable payment infrastructure. No need to worry  we have got you covered.",
     image: Consumer,
   },
   {
@@ -31,7 +31,7 @@ const cards = [
     id: 4,
     title: "For Enterprise Companies",
     description:
-      "You can tailor Primax's payment solutions to suit your unique requirements and simplify your financial processes with advanced features and API integrations.",
+      "You can tailor Primax&apos;s payment solutions to suit your unique requirements and simplify your financial processes with advanced features and API integrations.",
     image: Consumer,
   },
 ];

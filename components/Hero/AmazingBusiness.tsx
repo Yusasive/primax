@@ -23,8 +23,9 @@ export default function AmazingBusiness() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
         >
-          We're proud to be a catalyst for business success, helping businesses
-          and individuals in Africa and beyond unlock their full potential.
+          We&apos;re proud to be a catalyst for business success, helping
+          businesses and individuals in Africa and beyond unlock their full
+          potential.
         </motion.p>
       </motion.div>
     </section>

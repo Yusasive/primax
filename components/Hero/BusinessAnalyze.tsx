@@ -10,7 +10,7 @@ const featuresData = [
   {
     title: "Saving and Withdrawal Management.",
     description:
-      "There is adequate provision to set up and manage customers' accounts . This is to allow for an easy deposit and withdrawal process.",
+      "There is adequate provision to set up and manage customers&apos; accounts . This is to allow for an easy deposit and withdrawal process.",
   },
   {
     title: "Customer Information Management.",
