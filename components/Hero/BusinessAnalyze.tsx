@@ -1,6 +1,10 @@
 import Business from "@/components/reusable/Business";
 import AiFeat from "@/public/images/AiFeat.png";
 
+interface BusinessAnalyzeProps {
+  id?: string; 
+}
+
 const featuresData = [
   {
     title: "Customer Account Management.",
@@ -18,8 +22,7 @@ const featuresData = [
       "Gather necessary information of the clients such as next of kin, phone number, email address, age, payroll  patterns, and others required information to create a smooth avenue for transactions.",
   },
 ];
-
-export default function BusinessAnalyze() {
+export default function BusinessAnalyze({ id }: BusinessAnalyzeProps) {
   return (
     <div>
       <Business image={AiFeat} features={featuresData} />
