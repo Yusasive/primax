@@ -1,30 +1,34 @@
-export const NavbarMenu = [
+export type MenuItem = {
+  id: number;
+  title: string;
+  link: string;
+  subMenu?: { id: number; title: string; link: string }[];
+};
+
+export const NavbarMenu: MenuItem[] = [
   {
     id: 1,
-    title: "Poduct",
-    link: "#",
+    title: "Product",
+    link: "#", // Keeps dropdown clickable
     subMenu: [
-      { id: 11, title: "Payment Link", link: "/programmes/social" },
-      {
-        id: 12,
-        title: "Connect",
-        link: "/programmes/education",
-      },
+      { id: 11, title: "Business Plans", link: "#business-plans" },
+      { id: 12, title: "Features", link: "#features" },
     ],
   },
   {
     id: 2,
     title: "Resources",
-    link: "/resources",
+    link: "#business-analyze",
   },
   {
     id: 3,
-    title: "Company",
-    link: "/company",
+    title: "Contacts",
+    link: "#contacts",
   },
-  //   {
-  //     id: 4,
-  //     title: "Blog",
-  //     link: "/blogs",
-  //   },
+  // Uncomment if needed
+  // {
+  //   id: 4,
+  //   title: "Blog",
+  //   link: "/blogs",
+  // },
 ];

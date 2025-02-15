@@ -2,7 +2,12 @@ import Link from "next/link";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 
-export default function Footer() {
+interface FooterProps {
+  id?: string; 
+}
+
+export default function Footer({ id }: FooterProps) {
+
   return (
     <div className="w-full bg-[#12002b] px-8 py-20 md:px-52">
       <footer className="bg-base-200/60 sm:px-10">

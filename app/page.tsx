@@ -17,17 +17,17 @@ export default function Home() {
     <>
       <HeroSection />
       <Section />
-      <BusinessCard />
-      <FeatureCards />
+      <BusinessCard id="business-plans" />
+      <FeatureCards id="features" />
       <World />
-      <BusinessAnalyze />
+      <BusinessAnalyze id="business-analyze" />
       <BusinessPotential />
       <BusinessCashPin />
       <GlobalAccessibility />
       <DrivenDecision />
       <AmazingBusiness />
       <PaymentSolutions />
-      <Footer />
+      <Footer id="contacts" />
     </>
   );
 }

@@ -3,6 +3,10 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
+interface PricingPlansProps {
+  id?: string;
+}
+
 const plans = [
   {
     id: 1,
@@ -150,7 +154,7 @@ const plans = [
   },
 ];
 
-export default function PricingPlans() {
+export default function PricingPlans({ id }: PricingPlansProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
