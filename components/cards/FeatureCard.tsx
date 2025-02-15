@@ -7,7 +7,11 @@ import Vector1 from "@/public/images/Vector1.png";
 import Vector2 from "@/public/images/Vector2.png";
 import Vector3 from "@/public/images/Vector3.png";
 
-export default function FeatureCards() {
+interface FeatureCardsProps {
+  id?: string; 
+}
+
+export default function FeatureCards({ id }: FeatureCardsProps) {
   const features = [
     {
       id: 1,
